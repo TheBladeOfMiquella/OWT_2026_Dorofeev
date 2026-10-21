@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM_JS. Считываем информацию из DOM</title>
+</head>
+
+<body>
+    <h1 align="center">DOM_JS. Считываем информацию из DOM</h1>
+
+    <!-- ================= ЕДИНАЯ НАВИГАЦИЯ (жирным — текущая страница) ================= -->
+    <ul>
+        <li><a href="index.html" target="_self">Главная</a></li>
+        <li><a href="catalog.html" target="_self">Каталог игр</a></li>
+        <li><a href="catalog.html#section2" target="_self">Каталог: раздел 2 (закладка)</a></li>
+        <li><a href="delivery.html" target="_self">Доставка и оплата</a></li>
+        <li><a href="passport.html" target="_self">Паспорт</a></li>
+        <li><a href="dom_js.html" target="_self"><b>DOM_JS: читаем из DOM (текущая страница)</b></a></li>
+        <li><a href="passport_edit.html" target="_self">Латиница по клику</a></li>
+        <li><a href="algorithm.html" target="_self">Алгоритмическая задача</a></li>
+        <li><a href="contact.html" target="_self">Контакты и формы</a></li>
+        <li><a href="http://www.hse.ru" target="_blank">Наш университет — ВШЭ (внешний сайт)</a></li>
+        <li><a href="https://github.com/vmarshirov/g06u28" target="_blank">
+            <img src="images/logo.png" height="30" alt="Логотип: репозиторий курса"></a></li>
+    </ul>
+
+    <hr>
+
+    <!-- Тот же блок данных, что и на passport.html.
+         Здесь мы НЕ меняем страницу скриптом, а считываем значения
+         вручную через консоль Инструментов разработчика (F12). -->
+    <table align="center" border="1" cellspacing="0" cellpadding="10" width="700">
+        <tr>
+            <td width="50%" valign="top">
+                <h4 align="center">Страница 2</h4>
+                <p>Личные данные владельца:</p>
+                <!-- Нумерация <p> на ЭТОЙ странице своя: p[1], p[2], p[3] -->
+                <p>Фамилия: <span id="last_name">ДОРОФЕЕВ</span></p>
+                <p>Имя: <span id="first_name">АРСЕНИЙ</span></p>
+                <p>Год рождения: <span id="birth_year">2007</span></p>
+            </td>
+            <td width="50%" valign="top">
+                <h4 align="center">Страница 3</h4>
+                <p>Пол: <span id="gender">МУЖ.</span></p>
+                <p>Место рождения: <span id="birth_place">г. МОСКВА</span></p>
+                <p>Дата выдачи: <span id="issue_date">01.01.2020</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <h3>Какие команды выполнялись в консоли (F12 → Console)</h3>
+    <!-- <pre> сохраняет пробелы и переносы — удобно показывать код -->
+    <pre>
+/* getElementsByTagName('p') — коллекция ВСЕХ абзацев страницы (нумерация с 0) */
+/* childNodes[1] — второй дочерний узел абзаца, у нас это &lt;span&gt; с данными */
+document.getElementsByTagName('p')[1].childNodes[1].innerText   /* -> "ДОРОФЕЕВ"  (фамилия)  */
+document.getElementsByTagName('p')[2].childNodes[1].innerText   /* -> "АРСЕНИЙ" (имя)      */
+document.getElementsByTagName('p')[3].childNodes[1].innerText   /* -> "2007"   (год рожд.) */
+    </pre>
+
+    <!-- Сюда вставлен скриншот консоли (F12 → Console),
+         где выполнены команды из блока <pre> выше -->
+    <h3>Скриншот консоли разработчика</h3>
+    <p align="center">
+        <img src="images/dom_js_screenshot.png" width="700"
+             alt="Скриншот консоли разработчика с выполненными командами">
+    </p>
+
+</body>
+</html>

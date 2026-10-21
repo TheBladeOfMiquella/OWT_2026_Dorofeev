@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Доставка и оплата — Игромания</title>
+</head>
+
+<body>
+    <h1 align="center">Доставка и оплата</h1>
+
+    <!-- ================= ЕДИНАЯ НАВИГАЦИЯ (жирным — текущая страница) ================= -->
+    <ul>
+        <li><a href="index.html" target="_self">Главная</a></li>
+        <li><a href="catalog.html" target="_self">Каталог игр</a></li>
+        <li><a href="catalog.html#section2" target="_self">Каталог: раздел 2 (закладка)</a></li>
+        <li><a href="delivery.html" target="_self"><b>Доставка и оплата (текущая страница)</b></a></li>
+        <li><a href="passport.html" target="_self">Паспорт</a></li>
+        <li><a href="dom_js.html" target="_self">DOM_JS: читаем из DOM</a></li>
+        <li><a href="passport_edit.html" target="_self">Латиница по клику</a></li>
+        <li><a href="algorithm.html" target="_self">Алгоритмическая задача</a></li>
+        <li><a href="contact.html" target="_self">Контакты и формы</a></li>
+        <li><a href="http://www.hse.ru" target="_blank">Наш университет — ВШЭ (внешний сайт)</a></li>
+        <li><a href="https://github.com/vmarshirov/g06u28" target="_blank">
+            <img src="images/logo.png" height="30" alt="Логотип: репозиторий курса"></a></li>
+    </ul>
+
+    <hr>
+
+    <!-- Закладки внутри страницы: навигация по разделам -->
+    <h4>Навигация по странице:</h4>
+    <ul>
+        <li><a href="#top" target="_self">К началу страницы</a></li>
+        <li><a href="#section1" target="_self">Раздел 1. Условия доставки</a></li>
+        <li><a href="#section2" target="_self">Раздел 2. Оплата</a></li>
+    </ul>
+
+    <a id="top"></a>
+
+    <!-- ================= РАЗДЕЛ 1 ================= -->
+    <h2><a id="section1">Раздел 1. Условия доставки</a></h2>
+    <p>Доставляем заказы по всей России. Сроки зависят от способа доставки
+       (курьер, пункт выдачи, почта). Основные условия сведены в таблицу ниже.</p>
+
+    <!-- ============================================================
+         ТАБЛИЦА (п. 10 ТЗ). Что в ней есть:
+         - фоновое изображение ВСЕЙ таблицы: атрибут background="images/table_bg.jpg"
+           (учебный «презентационный» атрибут, как в примерах курса);
+         - изображение внутри одной из ячеек: <img> в <td>;
+         - гиперссылки в ячейках;
+         - colspan — объединение ячеек по горизонтали.
+         ============================================================ -->
+    <table align="center" border="1" cellspacing="5" cellpadding="10" width="700"
+           background="images/table_bg.jpg">
+        <!-- caption — заголовок таблицы -->
+        <caption><b>Условия доставки и оплаты</b></caption>
+
+        <tr> <!-- tr — строка таблицы -->
+            <!-- td — ячейка. colspan="3": ячейка растянута на 3 колонки -->
+            <td colspan="3" bgcolor="aqua" height="40" align="center">
+                <img src="images/logo.png" height="30" alt="Логотип магазина">
+                Магазин настольных игр «Игромания»
+            </td>
+        </tr>
+
+        <tr>
+            <!-- Изображение в ячейке таблицы (часть требования п. 10) -->
+            <td width="200">
+                <img src="images/dice.png" width="180" alt="Кубики"><br>
+                Подарок к каждому заказу — кубик d6
+            </td>
+            <td width="300">
+                <b>Способы доставки:</b>
+                <!-- Маркированный список внутри ячейки -->
+                <ul>
+                    <li>Курьером (1–2 дня)</li>
+                    <li>Пункт выдачи (2–4 дня)</li>
+                    <li>Почта России (5–10 дней)</li>
+                </ul>
+            </td>
+            <td width="200">
+                <b>Гиперссылки в таблице:</b><br>
+                <!-- Текстовая ссылка внутри ячейки — в текущем окне -->
+                <a href="contact.html" target="_self">Форма заказа</a><br>
+                <!-- Внешняя ссылка — в новом окне -->
+                <a href="https://www.pochta.ru" target="_blank">Отследить посылку (почта.ру)</a>
+            </td>
+        </tr>
+
+        <tr>
+            <!-- Ячейка с фоном: background можно задать и отдельной ячейке -->
+            <td colspan="2" background="images/table_bg.jpg" align="right">
+                Оплата: наличные, карта, СБП
+            </td>
+            <td align="center">© 2026</td>
+        </tr>
+    </table>
+
+    <p><a href="#top" target="_self">К началу страницы</a></p>
+
+    <!-- ================= РАЗДЕЛ 2 ================= -->
+    <h2><a id="section2">Раздел 2. Оплата</a></h2>
+    <p>Оплатить заказ можно наличными курьеру, банковской картой или по СБП
+       (по QR-коду в приложении банка). Для юридических лиц — безналичный расчёт
+       по счёту.</p>
+    <p>Подробности и форма обратной связи — на странице
+       <a href="contact.html" target="_self">Контакты и формы</a>.</p>
+
+    <p><a href="#top" target="_self">К началу страницы</a></p>
+
+    <hr>
+    <p><a href="index.html" target="_self">Вернуться на главную</a></p>
+
+</body>
+</html>

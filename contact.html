@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты и формы — Игромания</title>
+</head>
+
+<body>
+    <h1 align="center">Контакты и формы</h1>
+
+    <!-- ================= ЕДИНАЯ НАВИГАЦИЯ (жирным — текущая страница) ================= -->
+    <ul>
+        <li><a href="index.html" target="_self">Главная</a></li>
+        <li><a href="catalog.html" target="_self">Каталог игр</a></li>
+        <li><a href="catalog.html#section2" target="_self">Каталог: раздел 2 (закладка)</a></li>
+        <li><a href="delivery.html" target="_self">Доставка и оплата</a></li>
+        <li><a href="passport.html" target="_self">Паспорт</a></li>
+        <li><a href="dom_js.html" target="_self">DOM_JS: читаем из DOM</a></li>
+        <li><a href="passport_edit.html" target="_self">Латиница по клику</a></li>
+        <li><a href="algorithm.html" target="_self">Алгоритмическая задача</a></li>
+        <li><a href="contact.html" target="_self"><b>Контакты и формы (текущая страница)</b></a></li>
+        <li><a href="http://www.hse.ru" target="_blank">Наш университет — ВШЭ (внешний сайт)</a></li>
+        <li><a href="https://github.com/vmarshirov/g06u28" target="_blank">
+            <img src="images/logo.png" height="30" alt="Логотип: репозиторий курса"></a></li>
+    </ul>
+
+    <hr>
+
+    <!-- Закладки внутри страницы -->
+    <h4>Навигация по странице:</h4>
+    <ul>
+        <li><a href="#top" target="_self">К началу страницы</a></li>
+        <li><a href="#section1" target="_self">Раздел 1. Личные данные</a></li>
+        <li><a href="#section2" target="_self">Раздел 2. Заказ из магазина</a></li>
+    </ul>
+
+    <a id="top"></a>
+
+    <!-- ============================================================
+         ФОРМА 1 (п. 11 ТЗ): личные контактные данные.
+         action — адрес удалённого сервера, который принимает данные.
+         method="post" — данные уходят в теле запроса (не видны в адресе).
+         target="_blank" — ответ сервера откроется в новой вкладке.
+         ============================================================ -->
+    <h2><a id="section1">Форма 1. Личные контактные данные</a></h2>
+    <form action="https://httpbin.org/post" method="post" id="UserEnter1" name="UserEnter1" target="_blank">
+
+        <!-- type="text" — обычное текстовое поле; value — значение по умолчанию -->
+        <p>Фамилия: <input type="text" name="last_name" size="20" value="Дорофеев"></p>
+        <p>Имя: <input type="text" name="first_name" size="20" value="Арсений"></p>
+        <p>Группа: <input type="text" name="group" size="10" value="OWT-2026, гр. 5"></p>
+
+        <!-- Мобильный телефон: type="tel" — на телефонах открывает цифровую клавиатуру -->
+        <p>Мобильный телефон: <input type="tel" name="phone" size="20" value="+7-900-000-00-00"></p>
+
+        <!-- type="email" — браузер проверит, что введён адрес с @ -->
+        <p>Электронная почта: <input type="email" name="email" size="30" value="arevdorofeev@edu.hse.ru"></p>
+
+        <!-- type="date" — календарь; value по умолчанию -->
+        <p>Дата отправки сообщения: <input type="date" name="message_date" value="2026-10-21"></p>
+
+        <!-- Скрытое поле: не отображается, но уходит на сервер -->
+        <input type="hidden" name="form_type" value="contacts">
+
+        <!-- Кнопки: Reset очищает/восстанавливает поля, Submit отправляет форму -->
+        <p>
+            <input type="reset" name="reset" value="Обновить">
+            <input type="submit" name="submit" value="Отправить">
+        </p>
+    </form>
+
+    <p><a href="#top" target="_self">К началу страницы</a></p>
+
+    <hr>
+
+    <!-- ============================================================
+         ФОРМА 2 (п. 12 ТЗ): оригинальные данные — заказ из магазина.
+         Обязательные типы полей: text, number, radio, checkbox,
+         date, password, hidden + значения по умолчанию.
+         name у каждого поля — «тематический» (про заказ), как требует ТЗ.
+         ============================================================ -->
+    <h2><a id="section2">Форма 2. Заказ из магазина настольных игр</a></h2>
+    <form action="https://httpbin.org/post" method="post" id="UserEnter2" name="UserEnter2" target="_blank">
+
+        <!-- text: название игры, по умолчанию — «Шахматы» -->
+        <p>Название игры: <input type="text" name="game_name" size="30" value="Шахматы"></p>
+
+        <!-- number: количество экземпляров -->
+        <p>Количество: <input type="number" name="game_quantity" min="1" max="10" value="1"></p>
+
+        <!-- radio: выбор ОДНОГО варианта из группы.
+             Все кнопки с одинаковым name="delivery" — это одна группа.
+             checked — вариант, выбранный по умолчанию -->
+        <p>Способ доставки:
+            <input type="radio" name="delivery" value="courier">Курьер
+            <input type="radio" name="delivery" value="pickup" checked>Пункт выдачи
+            <input type="radio" name="delivery" value="post">Почта
+        </p>
+
+        <!-- checkbox: независимые галочки, можно отметить несколько.
+             Каждая имеет СВОЁ имя и value, уходят на сервер при отмеченных -->
+        <p>Дополнительно:
+            <input type="checkbox" name="extra_dice" value="yes" checked>Кубик в подарок
+            <input type="checkbox" name="extra_giftwrap" value="yes">Подарочная упаковка
+            <input type="checkbox" name="extra_rules" value="yes">Печатные правила
+        </p>
+
+        <!-- date: дата доставки -->
+        <p>Дата доставки: <input type="date" name="delivery_date" value="2026-10-25"></p>
+
+        <!-- password: ввод пароля, символы скрыты звёздочками -->
+        <p>Пароль личного кабинета: <input type="password" name="account_password" size="20" value="123456"></p>
+
+        <!-- hidden: невидимое поле со значением по умолчанию (скидка в %) -->
+        <input type="hidden" name="discount" value="5">
+
+        <!-- textarea: пожелания к заказу -->
+        <p>Пожелания к заказу:<br>
+            <textarea cols="60" rows="3" name="order_wishes">Позвонить за час до доставки</textarea>
+        </p>
+
+        <!-- ==== Служебный блок (по образцу примеров курса) ==== -->
+        <p>Название файла: <input type="text" name="000_file_name" value="OWT_gr5_var6_Dorofeev.txt" size="30"></p>
+        <p>Тип записи в файл:
+            <select name="010_mode">
+                <option value="a">a — дозаписать в файл</option>
+                <option value="w">w — очистить файл и записать</option>
+            </select>
+        </p>
+        <input type="hidden" name="function" value="page">
+        <input type="hidden" name="page_id" value="3">
+
+        <p>
+            <input type="reset" name="reset" value="Обновить">
+            <input type="submit" name="submit" value="Отправить">
+        </p>
+    </form>
+
+    <p><a href="#top" target="_self">К началу страницы</a></p>
+
+</body>
+</html>

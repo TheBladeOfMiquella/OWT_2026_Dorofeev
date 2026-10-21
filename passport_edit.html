@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Изменяем кириллицу на латиницу по клику</title>
+</head>
+
+<body>
+    <h1 align="center">Изменяем кириллицу на латиницу по клику</h1>
+
+    <!-- ================= ЕДИНАЯ НАВИГАЦИЯ (жирным — текущая страница) ================= -->
+    <ul>
+        <li><a href="index.html" target="_self">Главная</a></li>
+        <li><a href="catalog.html" target="_self">Каталог игр</a></li>
+        <li><a href="catalog.html#section2" target="_self">Каталог: раздел 2 (закладка)</a></li>
+        <li><a href="delivery.html" target="_self">Доставка и оплата</a></li>
+        <li><a href="passport.html" target="_self">Паспорт</a></li>
+        <li><a href="dom_js.html" target="_self">DOM_JS: читаем из DOM</a></li>
+        <li><a href="passport_edit.html" target="_self"><b>Латиница по клику (текущая страница)</b></a></li>
+        <li><a href="algorithm.html" target="_self">Алгоритмическая задача</a></li>
+        <li><a href="contact.html" target="_self">Контакты и формы</a></li>
+        <li><a href="http://www.hse.ru" target="_blank">Наш университет — ВШЭ (внешний сайт)</a></li>
+        <li><a href="https://github.com/vmarshirov/g06u28" target="_blank">
+            <img src="images/logo.png" height="30" alt="Логотип: репозиторий курса"></a></li>
+    </ul>
+
+    <hr>
+
+    <table align="center" border="1" cellspacing="0" cellpadding="10" width="700">
+        <tr>
+            <td width="50%" valign="top">
+                <h4 align="center">Страница 2</h4>
+                <p>Личные данные владельца:</p>
+                <p>Фамилия: <span id="last_name">ДОРОФЕЕВ</span></p>
+                <p>Имя: <span id="first_name">АРСЕНИЙ</span></p>
+                <p>Год рождения: <span id="birth_year">2007</span></p>
+            </td>
+            <td width="50%" valign="top">
+                <h4 align="center">Страница 3</h4>
+                <p>Пол: <span id="gender">МУЖ.</span></p>
+                <p>Место рождения: <span id="birth_place">г. МОСКВА</span></p>
+                <p>Дата выдачи: <span id="issue_date">01.01.2020</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Элемент-триггер: скрипт «вешает» обработчик клика именно на этот абзац -->
+    <h3 align="center"><p id="for_click">КЛИКНИТЕ ЗДЕСЬ, чтобы заменить фамилию, имя и год рождения на латиницу</p></h3>
+
+    <!-- Скрипт подключён В КОНЦЕ body: так гарантируется, что вся разметка
+         уже создана к моменту выполнения скрипта (иначе getElementById
+         не найдёт элементы, которых ещё нет в DOM). -->
+    <script src="js/passport_edit.js"></script>
+
+</body>
+</html>

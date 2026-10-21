@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Паспорт — Игромания</title>
+</head>
+
+<body>
+    <h1 align="center">Паспорт (страницы 2–3)</h1>
+
+    <!-- ================= ЕДИНАЯ НАВИГАЦИЯ (жирным — текущая страница) ================= -->
+    <ul>
+        <li><a href="index.html" target="_self">Главная</a></li>
+        <li><a href="catalog.html" target="_self">Каталог игр</a></li>
+        <li><a href="catalog.html#section2" target="_self">Каталог: раздел 2 (закладка)</a></li>
+        <li><a href="delivery.html" target="_self">Доставка и оплата</a></li>
+        <li><a href="passport.html" target="_self"><b>Паспорт (текущая страница)</b></a></li>
+        <li><a href="dom_js.html" target="_self">DOM_JS: читаем из DOM</a></li>
+        <li><a href="passport_edit.html" target="_self">Латиница по клику</a></li>
+        <li><a href="algorithm.html" target="_self">Алгоритмическая задача</a></li>
+        <li><a href="contact.html" target="_self">Контакты и формы</a></li>
+        <li><a href="http://www.hse.ru" target="_blank">Наш университет — ВШЭ (внешний сайт)</a></li>
+        <li><a href="https://github.com/vmarshirov/g06u28" target="_blank">
+            <img src="images/logo.png" height="30" alt="Логотип: репозиторий курса"></a></li>
+    </ul>
+
+    <hr>
+
+    <!-- ============================================================
+         ЛИЧНЫЕ ДАННЫЕ. ВАЖНО ДЛЯ ЗАДАНИЯ DOM_JS:
+         каждое значение лежит внутри <p> в теге <span>.
+         В DOM у абзаца <p>Имя: <span>ИВАН</span></p> два ребёнка:
+           childNodes[0] — текстовый узел "Имя: "
+           childNodes[1] — элемент <span>
+         Поэтому document.getElementsByTagName('p')[1].childNodes[1].innerText
+         вернёт фамилию, [2] — имя, [3] — год рождения (нумерация <p> с нуля!).
+         ============================================================ -->
+    <table align="center" border="1" cellspacing="0" cellpadding="10" width="700">
+        <tr>
+            <!-- Левая ячейка — условная «2-я страница» паспорта -->
+            <td width="50%" valign="top">
+                <h4 align="center">Страница 2</h4>
+
+                <!-- p[0]: служебный абзац, чтобы нумерация данных начиналась предсказуемо -->
+                <p>Личные данные владельца:</p>
+
+                <!-- p[1] — ФАМИЛИЯ: childNodes[1] = <span id="last_name"> -->
+                <p>Фамилия: <span id="last_name">ДОРОФЕЕВ</span></p>
+
+                <!-- p[2] — ИМЯ: childNodes[1] = <span id="first_name"> -->
+                <p>Имя: <span id="first_name">АРСЕНИЙ</span></p>
+
+                <!-- p[3] — ГОД РОЖДЕНИЯ: childNodes[1] = <span id="birth_year"> -->
+                <p>Год рождения: <span id="birth_year">2007</span></p>
+            </td>
+
+            <!-- Правая ячейка — условная «3-я страница» -->
+            <td width="50%" valign="top">
+                <h4 align="center">Страница 3</h4>
+                <p>Пол: <span id="gender">МУЖ.</span></p>
+                <p>Место рождения: <span id="birth_place">г. МОСКВА</span></p>
+                <p>Дата выдачи: <span id="issue_date">01.01.2020</span></p>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

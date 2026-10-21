@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Решение алгоритмической задачи</title>
+</head>
+
+<body>
+    <h1 align="center">Решение алгоритмической задачи</h1>
+
+    <!-- ================= ЕДИНАЯ НАВИГАЦИЯ (жирным — текущая страница) ================= -->
+    <ul>
+        <li><a href="index.html" target="_self">Главная</a></li>
+        <li><a href="catalog.html" target="_self">Каталог игр</a></li>
+        <li><a href="catalog.html#section2" target="_self">Каталог: раздел 2 (закладка)</a></li>
+        <li><a href="delivery.html" target="_self">Доставка и оплата</a></li>
+        <li><a href="passport.html" target="_self">Паспорт</a></li>
+        <li><a href="dom_js.html" target="_self">DOM_JS: читаем из DOM</a></li>
+        <li><a href="passport_edit.html" target="_self">Латиница по клику</a></li>
+        <li><a href="algorithm.html" target="_self"><b>Алгоритмическая задача (текущая страница)</b></a></li>
+        <li><a href="contact.html" target="_self">Контакты и формы</a></li>
+        <li><a href="http://www.hse.ru" target="_blank">Наш университет — ВШЭ (внешний сайт)</a></li>
+        <li><a href="https://github.com/vmarshirov/g06u28" target="_blank">
+            <img src="images/logo.png" height="30" alt="Логотип: репозиторий курса"></a></li>
+    </ul>
+
+    <hr>
+
+    <!-- Задача №1006 по моему номеру из списка группы (вариант 6):
+         размен суммы купюрами 500, 100, 10 и монетой 2 руб. -->
+    <p name="formulation"><b>Задача №1006:</b> известна денежная сумма.
+       Разменять её купюрами 500, 100, 10 и монетой 2 руб., если это возможно.
+       Если размен возможен — отправить данные на сервер.</p>
+
+    <!-- Форма: id/name="UserEnter" — как в примерах курса.
+         action — адрес удалённого сервера, принимающего данные;
+         target="_blank" — ответ сервера откроется в новой вкладке. -->
+    <form action="https://httpbin.org/post" method="post" id="UserEnter" name="UserEnter" target="_blank">
+        <ul>
+            <!-- Скрытое поле: на экране не видно, но уходит на сервер со значением по умолчанию -->
+            <li>Для поисковика: <input type="hidden" name="q" value="search"></li>
+
+            <!-- textarea — многострочное поле; сюда записана формулировка задачи -->
+            <li>Формулировка задачи:
+                <br><textarea cols="60" rows="4" name="formulation">Известна денежная сумма. Разменять её купюрами 500, 100, 10 и монетой 2 руб., если это возможно.</textarea></li>
+
+            <!-- Числовое поле ввода суммы (type="number"), значение по умолчанию 1234 -->
+            <li>Денежная сумма (руб.): <input id="sum" name="sum" type="number" value="1234"></li>
+
+            <!-- Поле результата: его заполняет скрипт после проверки -->
+            <li>Результат решения: <input id="result" name="result" value="не определён"></li>
+
+            <!-- Две кнопки type="button": они НЕ отправляют форму сами,
+                 за них всё делает подключённый скрипт -->
+            <li>действие 1: <input id="verify" type="button" value="Разменять"></li>
+            <li>действие 2: <input id="send" type="button" value="Отправить"></li>
+        </ul>
+    </form>
+
+    <!-- Скрипт подключён в конце body (после всех элементов формы) -->
+    <script src="js/algorithm.js"></script>
+
+</body>
+</html>
